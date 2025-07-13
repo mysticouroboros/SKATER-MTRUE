@@ -83,21 +83,34 @@
 </head>
 <body>
   <div class="video-container">
-    <div class="video-frame">
-      <video id="bops-video" src="01.mov" controls></video>
+    <div class="video-frame" id="video-frame" style="display: none;">
+      <iframe id="youtube-embed"
+        width="100%" height="100%"
+        src=""
+        title="BOPS — SKATER MTRUE"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
     </div>
+
     <div class="play-button" id="play-btn">&#9658;</div>
   </div>
 
   <script>
     const playBtn = document.getElementById("play-btn");
-    const video = document.getElementById("bops-video");
+    const videoFrame = document.getElementById("video-frame");
+    const youtubeEmbed = document.getElementById("youtube-embed");
+
+    // Replace with your actual YouTube video ID
+    const YOUTUBE_VIDEO_ID = "YOUR_VIDEO_ID"; // e.g. "dQw4w9WgXcQ"
 
     playBtn.addEventListener("click", () => {
+      videoFrame.style.display = "block";
       playBtn.style.display = "none";
-      video.style.display = "block";
-      video.play();
+      youtubeEmbed.src = `https://www.youtube.com/embed/${lcDx8Rh0lVI}?autoplay=1&rel=0`;
     });
   </script>
 </body>
+
 </html>
