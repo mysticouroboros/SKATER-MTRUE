@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SKATER MTRUE</title>
+  <link rel="manifest" href="manifest.json" />
+  <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
+  <style>
+    body {
+      color: #000000;
+      font-family: 'Unica One', sans-serif;
+      overflow-y: auto;
+    }
+
+    video#bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -2;
+      
+    }
+
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/9/95/Ancient_egyptian_star_ceiling.jpg') repeat;
+      background-size: cover;
+      z-index: -1;
+      opacity: 0.05;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    h1 {
+
+
+      font-size: 3em;
+      margin-bottom: 1rem;
+      letter-spacing: 0.15em;
+      color: #fdaa48;
+    
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/ff/Papyrus_texture.jpg'); background-size: cover;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(255, 170, 72, 0.4);
+}
+
+    .invocation {
+
+
+      font-family: 'Georgia', serif;
+      font-size: 1.2em;
+      max-width: 600px;
+      margin-bottom: 2rem;
+      color: #000000;
+      font-style: italic;
+    
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/ff/Papyrus_texture.jpg'); background-size: cover;
+      padding: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 0 8px rgba(255, 204, 102, 0.3);
+}
+
+    .nav-icons {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1rem;
+      justify-content: center;
+    
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/ff/Papyrus_texture.jpg'); background-size: cover;
+      color: #1c0f0a;
+}
+    .nav-icons a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      font-size: 0.95em;
+      color: #ffc600;
+      transition: transform 0.2s ease;
+    
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/ff/Papyrus_texture.jpg'); background-size: cover;
+      color: #1c0f0a;
+}
+    .nav-icons a:hover {
+      transform: scale(1.1);
+    }
+
+    .nav-icons img {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 0.5rem;
+      filter: drop-shadow(0 0 5px #ffcb47);
+    }
+
+    audio {
+      display: none;
+    }
+    @media (max-width: 768px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  .nav-icons {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .card, .card-front, .card-back {
+    width: 80px;
+    height: 110px;
+  }
+
+  .card-back {
+    font-size: 0.75em;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="bg1.mp4" type="video/mp4" />
+  </video>
+
+  <div class="stars"></div>
+
+  <div class="container">
+    <h1>SKATER MTRUE</h1>
+    <p class="invocation">This is a protest site. These are militant songs. This is a portal of resistance, not approval. SKATER MTRUE was forged in fire to drag the ops and speak what others swallow. Every silence you mistook was a sharpening. Welcome to the noise.</p>
+
+    <div class="nav-icons">
+      <a href="Poems/Bad_behaviour.pdf" target="_blank">
+        <img src="maat.png" alt="Poems">
+        BAD BEHAVIOUR
+      </a>
+      <a href="Web_poems/presidentlikeamother.html">
+        <img src="sekhmet.png" alt="PRESIDENT LIKE A MOTHER">
+PRESIDENT <br> LIKE A <br> MOTHER      </a>
+      <a href="crimes.html">
+        <img src="statu.png" alt="CRIMINAL">
+        CRIMINAL
+      </a>
+      <a href="coloniality.html">
+        <img src="set.png" alt="LINEAGE">
+       LINEAGE
+      </a>
+      <a href="bops.html" target="_blank">
+        <img src="baddies.png" alt="Bops">
+        Bops
+      </a>
+    </div>
+  </div>
+
+  <audio id="bg-audio" autoplay preload="auto"></audio>
+
+  <script>
+    const playlist = [
+      "Bops/COME GET YOUR BOP.wav",
+      "Bops/YOURBOP.wav"
+    ];
+
+    let currentTrack = 0;
+    const player = document.getElementById("bg-audio");
+
+    window.addEventListener("click", () => {
+      player.src = playlist[currentTrack];
+      player.play();
+      player.onended = () => {
+        currentTrack = (currentTrack + 1) % playlist.length;
+        player.src = playlist[currentTrack];
+        player.play();
+      };
+    });
+  
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("/service-worker.js")
+        .then(reg => {
+          console.log("Service Worker registered:", reg.scope);
+        })
+        .catch(err => {
+          console.error("Service Worker registration failed:", err);
+        });
+    });
+  }
+</script>
+
+</body>
+</html>
