@@ -16,9 +16,9 @@
     }
 
     .video-frame {
-      width: 100%;
-      max-width: 960px;
-      aspect-ratio: 16 / 9;
+      width: 90vw;
+      height: 50vw; /* maintains 16:9 ratio (16/9 = 1.78, and 90 * 0.5625 ≈ 50.625) */
+      max-height: 90vh;
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
       border: 2px solid rgba(255, 255, 255, 0.2);
     }
@@ -31,15 +31,23 @@
 
     @media (max-width: 768px) {
       .video-frame {
-        max-width: 100%;
-        padding: 10px;
+        width: 100vw;
+        height: 56.25vw; /* still keeping 16:9 */
+        padding: 0;
+        border: none;
       }
     }
   </style>
 </head>
 <body>
   <div class="video-frame">
-    <iframe src="https://www.youtube.com/embed/78IahLG6kR4?si=GUId2UPhFf-BsyT2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/78IahLG6kR4?si=GUId2UPhFf-BsyT2"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
+    </iframe>
   </div>
 </body>
 </html>
