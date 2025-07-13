@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Excerpt</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      line-height: 1.6;
+      background: #f5f5f2;
+      color: #2b2b2b;
+      max-width: 700px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+
+    input[type="text"], select {
+      border: none;
+      border-bottom: 1px solid #999;
+      background: transparent;
+      font: inherit;
+      padding: 2px 4px;
+      margin: 0 4px;
+      color: #000;
+      min-width: 100px;
+    }
+
+    input[type="text"]::placeholder {
+      color: #aaa;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+        margin: 20px auto;
+        font-size: 1em;
+      }
+
+      input[type="text"], select {
+        font-size: 1em;
+        min-width: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <p>
+    I too am 
+    <input type="text" placeholder="your identity">
+    , born in <input type="text" placeholder="birth year">... into a family from the same social milieu, with <select>
+  <option value="">-- select --</option>
+  <option value="military">military</option>
+  <option value="aristocratic">aristocratic</option>
+  <option value="bureaucratic">bureaucratic</option>
+  <option value="slave master">slave master</option>
+  <option value="enslaved">enslaved</option>
+  <option value="colonised">colonised</option>
+  <option value="imperial">imperial</option>
+</select> 
+    ancestry traceable to similarly unsavoury servants of the crown and empire.
+  </p>
+
+  <p>
+    We were marked by the same background and political events: ... an economy directed by 
+    <select>
+      <option value="">-- select --</option>
+      <option value="UK">UK</option>
+      <option value="USA">USA</option>
+      <option value="China">China</option>
+      <option value="IMF">IMF</option>
+      <option value="World Bank">World Bank</option>
+      <option value="France">France</option>
+    </select>; an intellectual life heavily influenced by 
+    <select>
+      <option value="">-- select --</option>
+      <option value="colonial">colonial</option>
+      <option value="imperial">imperial</option>
+      <option value="Eurocentric">Eurocentric</option>
+      <option value="religious">religious</option>
+      <option value="patriarchal">patriarchal</option>
+    </select> 
+    thinkers, ever since our founding fathers looked to the 
+    <select>
+      <option value="">-- select --</option>
+      <option value="colonisers">colonisers</option>
+      <option value="missionaries">missionaries</option>
+      <option value="bureaucrats">bureaucrats</option>
+      <option value="merchants">merchants</option>
+    </select> 
+    and 
+    <select>
+  <option value="">-- select --</option>
+  <option value="men in suits">men in suits</option>
+  <option value="hands raised to heaven">hands raised to heaven</option>
+  <option value="foreign voices on loudspeakers">foreign voices on loudspeakers</option>
+  <option value="men with clipboards">men with clipboards</option>
+  <option value="money wrapped in velvet">money wrapped in velvet</option>
+  <option value="laws written in tongues">laws written in tongues</option>
+  <option value="eyes behind glass">eyes behind glass</option>
+  <option value="flags without wind">flags without wind</option>
+</select>
+    in drafting our constitution and laws.
+  </p>
+  
+  <p style="font-size:11px;"> 
+    excerpt from The Story of Che Guevara by Lucía Álvarez De Toledo
+  </p>
+
+</body>
+</html>

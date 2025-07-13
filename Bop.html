@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BOPS — SKATER MTRUE</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px; /* padding around the frame */
+      box-sizing: border-box;
+    }
+
+    .video-frame {
+      width: 100%;
+      max-width: 960px;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      overflow: hidden;
+      background: #000;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: none;
+      background: #000;
+    }
+
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2em;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      text-align: center;
+      line-height: 95px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      z-index: 10;
+    }
+
+    .play-button:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .video-frame {
+        max-width: 100%;
+        aspect-ratio: 16 / 9;
+      }
+
+      .play-button {
+        width: 80px;
+        height: 80px;
+        line-height: 75px;
+        font-size: 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="video-container">
+    <div class="video-frame">
+      <video id="bops-video" src="01.mov" controls></video>
+    </div>
+    <div class="play-button" id="play-btn">&#9658;</div>
+  </div>
+
+  <script>
+    const playBtn = document.getElementById("play-btn");
+    const video = document.getElementById("bops-video");
+
+    playBtn.addEventListener("click", () => {
+      playBtn.style.display = "none";
+      video.style.display = "block";
+      video.play();
+    });
+  </script>
+</body>
+</html>
