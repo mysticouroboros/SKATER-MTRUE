@@ -3,35 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fill In The Poem: A Poem by Stella Nyanzi</title>
+  <title>Fill In The Poem</title>
   <style>
     body {
-      font-family: Georgia, serif;
-      padding: 20px;
-      background-color: #f9f4ef;
-      line-height: 1.7;
+      background-color: #ffffff;
+      color: #222;
+      font-family: "Courier New", Courier, monospace;
+      padding: 40px 20px;
       max-width: 800px;
       margin: auto;
+      line-height: 1.5;
+      font-size: 15px;
     }
 
     h1 {
-      font-size: 1.6em;
+      font-size: 1.3em;
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
+      font-weight: normal;
     }
 
     input[type="text"] {
-      padding: 4px;
-      font-size: 14px;
-      margin: 0 3px;
-      width: 150px;
-      max-width: 40vw;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.95em;
+      color: #666;
+      background: transparent;
+      border: none;
+      border-bottom: 1px dotted #ccc;
+      outline: none;
+      padding: 2px 4px;
+      min-width: 100px;
+    }
+
+    input[type="text"]::placeholder {
+      color: #bbb;
+      opacity: 1;
     }
 
     @media (max-width: 600px) {
+      body {
+        font-size: 14px;
+        padding: 20px 12px;
+      }
+
       input[type="text"] {
-        width: 80px;
-        font-size: 0.85em;
+        min-width: 80px;
+        font-size: 0.9em;
       }
     }
   </style>
