@@ -1,0 +1,21 @@
+{
+  "name": "SKATER MTRUE",
+  "short_name": "MTRUE",
+  "description": "Militant site for SKATER MTRUE — music, protest, resistance.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#fdaa48",
+  "icons": [
+    {
+      "src": "sekhmet.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "maat.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
